@@ -1,0 +1,23 @@
+# Module 2: Machine Learning Model Evaluation & Metrics
+
+## 1. Classification Metrics
+Evaluating classification models requires metrics aligned with business objectives, especially when dealing with imbalanced datasets.
+
+### A. Accuracy vs. Precision and Recall
+- Accuracy: Ratio of correct predictions to total predictions. Misleading in imbalanced datasets (e.g., 99% accuracy in fraud detection where 99% of transactions are normal).
+- Precision: True Positives / (True Positives + False Positives). Measures exactness. "Out of all predicted positives, how many are actually positive?" Essential when False Positives are expensive (e.g., Spam Filtering).
+- Recall (Sensitivity): True Positives / (True Positives + False Negatives). Measures completeness. "Out of all actual positives, how many did we catch?" Critical when False Negatives are dangerous (e.g., Cancer Diagnosis).
+
+### B. F1-Score and ROC-AUC
+- F1-Score: Harmonic mean of Precision and Recall. F1 = 2 * (Precision * Recall) / (Precision + Recall). Balance metric for imbalanced classes.
+- ROC Curve & AUC Score: Plot of True Positive Rate vs. False Positive Rate across classification thresholds. AUC range [0.5, 1.0] quantifies model discrimination ability regardless of decision threshold.
+
+## 2. Regression Evaluation Metrics
+- Mean Absolute Error (MAE): Average absolute difference between predicted and actual values. Robust to extreme outliers.
+- Mean Squared Error (MSE): Penalizes larger errors heavily due to squaring.
+- Root Mean Squared Error (RMSE): Square root of MSE, expressed in the original unit of the target variable.
+- R-Squared (R²): Coefficient of determination measuring variance explained by the model compared to baseline mean model.
+
+## 3. Validation Strategies
+- K-Fold Cross Validation: Dataset is split into K equal folds; trained K times, each fold acting as validation set once.
+- Stratified K-Fold: Ensures class proportions in each fold reflect the full dataset ratio. Vital for imbalanced classification tasks.

@@ -1,0 +1,26 @@
+# Module 3: Deep Learning & Neural Network Architecture
+
+## 1. Core Architecture Components
+Artificial Neural Networks (ANNs) are computational models inspired by biological brain structures, composed of input layers, hidden layers, and output layers.
+
+### A. Neurons and Weights
+Each artificial neuron receives inputs (x), applies learned weights (w) and bias (b), computing linear combination z = ∑(w_i * x_i) + b.
+
+### B. Activation Functions
+Activation functions introduce non-linearity, allowing networks to learn complex decision boundaries.
+- ReLU (Rectified Linear Unit): f(x) = max(0, x). Default choice for hidden layers due to computational efficiency and mitigation of vanishing gradients.
+- Sigmoid: Maps values to (0, 1). Used in binary classification output layers.
+- Softmax: Converts raw output logits into probability distribution summing to 1. Used in multi-class classification.
+
+## 2. Training Mechanics
+- Forward Propagation: Inputs pass through network layers to compute predicted output and loss score.
+- Loss Functions: Cross-Entropy Loss (classification), Mean Squared Error (regression).
+- Backpropagation: Uses Chain Rule of Calculus to compute gradients of loss function with respect to every weight in the network.
+- Optimization Algorithms:
+  - Stochastic Gradient Descent (SGD) with Momentum
+  - Adam (Adaptive Moment Estimation): Combines AdaGrad and RMSProp for fast convergence.
+
+## 3. Regularization & Overfitting Prevention
+- Dropout: Randomly deactivates a fraction of neurons (e.g., 20%-50%) during each training iteration to prevent feature co-adaptation.
+- Early Stopping: Halts training when validation loss stops improving for N consecutive epochs.
+- Weight Decay (L2 Regularization): Adds squared magnitude of weights to loss function to penalize large weights.

@@ -1,0 +1,25 @@
+# Module 1: Feature Engineering for Machine Learning
+
+## 1. Introduction to Feature Engineering
+Feature engineering is the process of using domain knowledge to select, transform, and extract structural patterns from raw data to create features that make machine learning algorithms perform better. It is often considered the single most critical factor determining the success of a predictive model.
+
+## 2. Key Techniques in Feature Transformation
+### A. Numerical Feature Scaling
+- Standard Scaler (Z-score Normalization): Rescales data to have a mean of 0 and standard deviation of 1. Formula: z = (x - μ) / σ. Crucial for distance-based algorithms like KNN, SVM, and Neural Networks.
+- Min-Max Scaling: Rescales values to a fixed range, typically [0, 1]. Formula: x_norm = (x - min) / (max - min). Sensitive to outliers.
+
+### B. Categorical Encoding
+- One-Hot Encoding: Creates binary columns for each categorical value. Best for nominal data without intrinsic ordering (e.g., city names, product categories). High cardinality can lead to sparse matrices.
+- Ordinal / Label Encoding: Assigns integer values to categories based on order (e.g., Low=1, Medium=2, High=3).
+
+### C. Missing Data Imputation
+- Mean/Median Imputation: Quick statistical fill for missing numeric values.
+- KNN / Iterative Imputation: Uses multivariate feature relationships to predict missing entries accurately.
+
+## 3. Advanced Feature Creation
+- Interaction Features: Multiplying or combining two correlated features (e.g., Price per Square Foot = Total Price / Area).
+- Polynomial Features: Generating non-linear feature combinations (x1^2, x1*x2) to capture complex boundary interactions.
+- Feature Selection: Techniques like Recursive Feature Elimination (RFE), LASSO L1 regularization, and Feature Importance trees to drop redundant features and prevent overfitting.
+
+## 4. Trainer Summary & Best Practices
+Always perform feature scaling AFTER splitting data into Training and Testing sets to prevent Data Leakage. Feature engineering directly impacts model interpretability and inference latency.
